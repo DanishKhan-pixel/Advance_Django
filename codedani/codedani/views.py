@@ -14,11 +14,11 @@ def homepage(request):
     } 
     return render(request, "index.html", data)
  
-def dani(request):
-    return HttpResponse("welcome again dani")
+def home(request):
+    return render(request, 'home.html')
 
-def ali(reques):
-    return HttpResponse("welcom ali")
+def about(request):
+    return render(request, "about.html")
 
 
 def alidetails(request, code):

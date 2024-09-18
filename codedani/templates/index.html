@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} # in this way load static file in django
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
 <body>
-    {% comment %} <h1>{{alpha}}</h1> {% endcomment %}
+{% comment %} for loop in django  {% endcomment %}
     {% for n in list%}
     <div>{{ forloop.counter0}} {{n}}</div>
     {% endfor %}
@@ -25,17 +25,27 @@
         </tr>
         {% endfor %}
     </table>
-
     <br>
 
-      {% for k in number%}
-      {% if k > 3 %}
-      <div>{{k}}</div>
-      {%endif%}
+
+
+
+{% comment %} if statment in django {% endcomment %}
+
+    {%if number|length > 0 %}
+       {% for k in number%}
+      
+       {% if k > 3 %}
+       <div>{{k}}</div>
+
+       {%endif%}
+
 
       {% endfor %}
-
-
-
+      {% else %}
+      no data 
+      {% endif %}
+    
+      
 </body>
 </html>

@@ -20,9 +20,10 @@ from codedani import views
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('dani/', views.dani, name='dani'),
+    path('home/', views.home, name='dani'),
     path("", views.homepage, name="homepage"),
-    path('ali/', views.ali, name='ali'),
+    # path('ali/', views.ali, name='ali'),
+    path('about/',views.about,name='about'),
     path('ali/<slug:code>/', views.alidetails, name='alidetails'),
 
     
