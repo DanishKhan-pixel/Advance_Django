@@ -16,15 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from codedani import views
+from . import views
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('home/', views.home, name='dani'),
-    path("", views.homepage, name="homepage"),
-    # path('ali/', views.ali, name='ali'),
-    path('about/',views.about,name='about'),
-    path('ali/<slug:code>/', views.alidetails, name='alidetails'),
+    path('',include('codeapp.urls')),
+    
 
     
 ]
