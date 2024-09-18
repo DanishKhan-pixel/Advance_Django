@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
 <body>
-    <h1>{{alpha}}</h1>
+    {% comment %} <h1>{{alpha}}</h1> {% endcomment %}
+    {% for n in list%}
+    <div>{{ forloop.counter0}} {{n}}</div>
+    {% endfor %}
+<br/>
+    <table border='1'cellpadding='10'>
+        <tr>
+            <th>name</th>
+            <th>phone</th>
+        </tr>
+        {%for d in student_details%}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
