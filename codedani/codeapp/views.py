@@ -28,3 +28,22 @@ def contact(request):
 
 def alidetails(request, code):
     return HttpResponse(code)
+
+
+def userform(request):
+    alpha=0
+    try:
+        #method firt
+        l1=int(request.GET['num1'])
+        l2=int(request.GET['num2'])
+
+        # second method
+        
+        # l1=int(request.GET.get('num1'))
+        # l2=int(request.GET.get("numb2"))
+        # print(l1+l2)
+        alpha=l1+l2
+    except:
+        pass
+    
+    return render(request, 'userform.html',{'output':alpha})
