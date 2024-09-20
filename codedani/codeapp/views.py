@@ -30,20 +30,39 @@ def alidetails(request, code):
     return HttpResponse(code)
 
 
-def userform(request):
-    alpha=0
-    try:
-        #method firt
-        l1=int(request.GET['num1'])
-        l2=int(request.GET['num2'])
+# def userform(request):
+#     # alpha=0
+#     try:
+#          # if request.method=='get':
+#         #method firt
+#          l1=int(request.get['num1'])
+#          l2=int(request.get['num2'])
 
-        # second method
+#         # second method
+#         #  l1=int(request.GET.get('num1'))
+#         #  l2=int(request.GET.get("numb2"))
+#         print(l1+l2)
+#         # alpha=l1+l2
         
-        # l1=int(request.GET.get('num1'))
-        # l2=int(request.GET.get("numb2"))
-        # print(l1+l2)
-        alpha=l1+l2
+#     except:
+#         pass
+    
+#     return render(request, 'userform.html')
+
+def userform(request):
+    finals=0
+    try:
+        #  if request.method=="POST":
+        #method first
+         l1=int(request.GET['num1'])
+         l2=int(request.GET['num2'])
+          # second method
+        #  l1=int(request.GET.get('num1'))
+        #  l2=int(request.GET.get("numb2"))
+        #  print(l1+l2);
+         finals=l1+l2
+    
     except:
         pass
-    
-    return render(request, 'userform.html',{'output':alpha})
+    return render(request, "userform.html" ,{'output':finals})
+        
