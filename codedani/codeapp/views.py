@@ -81,4 +81,27 @@ def userform(request):
         
 
 def calculator(request):
-    return render(request, 'calculator.html')
+    c=''
+    try:
+        if request.method=='GET':
+            l1=eval(request.GET['num1'])
+            l2=eval(request.GET['num2'])
+            operation=request.GET['operation']
+            if operation=='+':
+                c=l1+l2;
+            elif operation=='-':
+                c=l1-l2;
+            elif operation=='*':
+                c=l1*l2;
+            elif operation=="/":
+                c=l1/l2;
+    
+    
+    
+        
+
+    except:
+        c="Invalid operaton"
+    print(c)
+        
+    return render(request, 'calculator.html',{'c':c})
