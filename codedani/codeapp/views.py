@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from .form import userForm
 
 def homepage(request):
     data={
@@ -53,7 +54,9 @@ def alidetails(request, code):
 
 def userform(request):
     finals=0
+    # fn=userForm() 
     try:
+        
         #  if request.method=="POST":
         #method first
          l1=int(request.GET['num1'])
@@ -64,10 +67,18 @@ def userform(request):
         #  print(l1+l2);
          finals=l1+l2
 
+
          url="/contact/?output={}".format(finals)
          return HttpResponseRedirect(url)
     
     except:
         pass
+    # data = {
+    #     'form': fn,
+    #     'output': finals,
+    # }
     return render(request, "userform.html" ,{'output':finals})
         
+
+def calculator(request):
+    return render(request, 'calculator.html')
