@@ -10,7 +10,8 @@ urlpatterns = [
     path('contact/',views.contact,name='contact'),
     path('ali/<slug:code>/', views.alidetails, name='alidetails'),
     path('userform/',views.userform,name='userform'),
-    path('calculator/',views.calculator,name='calculator')
+    path('calculator/',views.calculator,name='calculator'),
+    path('check/', views.envodd,name='checkevenodd')
 
     
 ]
