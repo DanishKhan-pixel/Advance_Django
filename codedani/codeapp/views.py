@@ -96,6 +96,20 @@ def marksheet(request):
             s4 = eval(request.POST.get('subject4', 0))
             # Calculate total marks
             total = s1 + s2 + s3 + s4
-            print(total)
-    
+            # print(total)
+            p=total*100/400;
+            if p>=60:
+                d="first dev"
+            elif p>=40:
+                d="second dev"
+            elif p>30:
+                d="third dev"
+            else:
+                d='fail'
+            data={
+                'total':total,
+                'per':p,
+                'dev':d
+            }
+            return render(request, 'marksheet.html',data)
      return render(request, 'marksheet.html')
