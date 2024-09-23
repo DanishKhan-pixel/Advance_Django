@@ -88,8 +88,8 @@ def envodd(request):
     return render(request,'checkevenodd.html',{'c':c})
 
 def marksheet(request):
-    if request.method == "POST":
-        
+    
+     if request.method == "POST":
             s1 = eval(request.POST.get('subject1', 0))  
             s2 = eval(request.POST.get('subject2', 0))
             s3 = eval(request.POST.get('subject3', 0))
@@ -97,8 +97,5 @@ def marksheet(request):
             # Calculate total marks
             total = s1 + s2 + s3 + s4
             print(total)
-
-            
-
-    # If it's a GET request, or the form hasn't been submitted yet
-    return render(request, 'marksheet.html')
+    
+     return render(request, 'marksheet.html')
