@@ -117,3 +117,33 @@ def envodd(request):
             c="odd number"
     
     return render(request,'checkevenodd.html',{'c':c})
+
+
+# def marksheet(request):
+#    if request.method == "POST":
+#     try:
+#         s1 = int(request.POST.get('subject 1'))  
+#         s2 = int(request.POST.get('subject 2'))
+#         s3 = int(request.POST.get('subject 3'))
+#         s4 = int(request.POST.get('subject 4'))
+#     except ValueError:
+#      t = s1 + s2 + s3 + s4
+#     print(t)
+#     return render(request, "marksheet.html")
+
+def marksheet(request):
+    if request.method == "POST":
+        
+            # Safely get and convert inputs from the POST request
+            s1 = int(request.POST.get('subject1', 0))  # Default to 0 if missing or invalid
+            s2 = int(request.POST.get('subject2', 0))
+            s3 = int(request.POST.get('subject3', 0))
+            s4 = int(request.POST.get('subject4', 0))
+            # Calculate total marks
+            total = s1 + s2 + s3 + s4
+            print(total)
+
+            
+
+    # If it's a GET request, or the form hasn't been submitted yet
+    return render(request, 'marksheet.html')

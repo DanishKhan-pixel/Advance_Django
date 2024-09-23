@@ -11,7 +11,8 @@ urlpatterns = [
     path('ali/<slug:code>/', views.alidetails, name='alidetails'),
     path('userform/',views.userform,name='userform'),
     path('calculator/',views.calculator,name='calculator'),
-    path('check/', views.envodd,name='checkevenodd')
+    path('check/', views.envodd,name='checkevenodd'),
+    path('marksheet/',views.marksheet,name='marksheet')
 
     
 ]

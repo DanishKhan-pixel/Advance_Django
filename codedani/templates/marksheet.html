@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marksheet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Marksheet</h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+
+      {% comment %} <div class="mb-3">
+        <label for="Subject" class="form-label">Subject 1 </label>
+        <input type="text" class="form-control"  name=" Subject1 ">
+      </div>
+      <div class="mb-3">
+        <label for="Subject" class="form-label">Subject 2 </label>
+        <input type="text" class="form-control"  name=" Subject2 ">
+      </div>
+      <div class="mb-3">
+        <label for="Subject" class="form-label">Subject  </label>
+
+        <input type="text" class="form-control"  name=" Subject3 ">
+      </div>
+      <div class="mb-3">
+        <label for="Subject" class="form-label">Subject 4 </label>
+        <input type="text" class="form-control"  name=" Subject4 ">
+      </div> {% endcomment %}
+
+      <input type="text" name="subject1">
+    <input type="text" name="subject2">
+    <input type="text" name="subject3">
+    <input type="text" name="subject4">
+    <input type="submit" value="Submit">
+      {% comment %} <button type="submitte" class="btn btn-primary" >Marksheet</button> {% endcomment %}
+    </form>
+   
+
+      <!-- Total, Percentage and Division -->
+      <div class="mb-3">
+        <label for="totalMarks" class="form-label">Total Marks</label>
+        <input type="text" class="form-control" id="totalMarks" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="percentage" class="form-label">Percentage</label>
+        <input type="text" class="form-control" id="percentage" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="division" class="form-label">Division</label>
+        <input type="text" class="form-control" id="division" readonly>
+      </div>
+
+      
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
