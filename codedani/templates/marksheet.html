@@ -9,41 +9,41 @@
 <body>
   <div class="container mt-5">
     <h2 class="text-center mb-4">Marksheet</h2>
+    <form method="POST" class="container mt-4">
+  {% csrf_token %}
+  
+  <div class="mb-3">
+    <label for="subject1">Subject 1 </label>
+    <input type="text" name="subject1" class="form-control" id="subject1" placeholder="Enter Subject 1">
+  </div>
+  
+  <div class="mb-3">
+    <label for="subject2">Subject 2 </label>
+    <input type="text" name="subject2" class="form-control" id="subject2" placeholder="Enter Subject 2">
+  </div>
+  
+  <div class="mb-3">
+    <label for="subject3">Subject 3 </label>
+    <input type="text" name="subject3" class="form-control" id="subject3" placeholder="Enter Subject 3">
+  </div>
+  
+  <div class="mb-3">
+    <label for="subject4">Subject 4 </label>
+    <input type="text" name="subject4" class="form-control" id="subject4" placeholder="Enter Subject 4">
+  </div>
+  
+  <div>
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </div>
+</form>
     
-    <form method="POST">
-        {% csrf_token %}
 
-      {% comment %} <div class="mb-3">
-        <label for="Subject" class="form-label">Subject 1 </label>
-        <input type="text" class="form-control"  name=" Subject1 ">
-      </div>
-      <div class="mb-3">
-        <label for="Subject" class="form-label">Subject 2 </label>
-        <input type="text" class="form-control"  name=" Subject2 ">
-      </div>
-      <div class="mb-3">
-        <label for="Subject" class="form-label">Subject  </label>
-
-        <input type="text" class="form-control"  name=" Subject3 ">
-      </div>
-      <div class="mb-3">
-        <label for="Subject" class="form-label">Subject 4 </label>
-        <input type="text" class="form-control"  name=" Subject4 ">
-      </div> {% endcomment %}
-
-      <input type="text" name="subject1">
-    <input type="text" name="subject2">
-    <input type="text" name="subject3">
-    <input type="text" name="subject4">
-    <input type="submit" value="Submit">
-      {% comment %} <button type="submitte" class="btn btn-primary" >Marksheet</button> {% endcomment %}
-    </form>
    
 
       <!-- Total, Percentage and Division -->
       <div class="mb-3">
-        <label for="totalMarks" class="form-label">Total Marks</label>
-        <input type="text" class="form-control" id="totalMarks" readonly>
+        <label for="total" class="form-label">Total </label>
+        <input type="text" class="form-control" id="total" readonly>
       </div>
 
       <div class="mb-3">

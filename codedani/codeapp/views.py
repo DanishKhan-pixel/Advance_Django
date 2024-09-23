@@ -134,11 +134,10 @@ def envodd(request):
 def marksheet(request):
     if request.method == "POST":
         
-            # Safely get and convert inputs from the POST request
-            s1 = int(request.POST.get('subject1', 0))  # Default to 0 if missing or invalid
-            s2 = int(request.POST.get('subject2', 0))
-            s3 = int(request.POST.get('subject3', 0))
-            s4 = int(request.POST.get('subject4', 0))
+            s1 = eval(request.POST.get('subject1', 0))  
+            s2 = eval(request.POST.get('subject2', 0))
+            s3 = eval(request.POST.get('subject3', 0))
+            s4 = eval(request.POST.get('subject4', 0))
             # Calculate total marks
             total = s1 + s2 + s3 + s4
             print(total)
