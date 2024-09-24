@@ -9,22 +9,20 @@ def homepage(request):
     # print(ServiceData)
     # for a in ServiceData:
         # print(a)
-
-    alpha={
-        "ServiceData": ServiceData
-
-    }
     data={
         'title':'home page ',
         'alpha':'software engineering', 
         'list':['ali','ahamad','khan'],
         'number':[1,2,3,4,5,6,7,8,9],
+        "ServiceData": ServiceData,
         'student_details':[
             {'name':'ali','phone':123456},
-            {'name':'khan','phone':123456}
+            {'name':'khan','phone':123456},
+
+
         ]
     } 
-    return render(request, "index.html", data,alpha)
+    return render(request, "index.html", data)
  
 def home(request):
     return render(request, 'home.html')

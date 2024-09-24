@@ -1,4 +1,4 @@
-{% load static %} # in this way load static file in django
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +17,8 @@
         <tr>
             <th>name</th>
             <th>phone</th>
-        </tr>
-        {%for d in student_details%}
+        </tr> 
+        {% for d in student_details %}
         <tr>
             <td>{{d.name}}</td>
             <td>{{d.phone}}</td>
@@ -48,12 +48,26 @@
     
       
 
-      <div class="row">
-        {% for n in ServiceData %}
-        <span class="{{n.Service_icon}}"></span>
+      <div class="container mt-4">
+        <div class="row">
 
-        {% endfor %}
+          {% for n in ServiceData %}
 
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body text-center">
+                <!-- Display the service icon dynamically -->
+                <span class="{{n.Service_icon}}" style="font-size: 2rem;"></span>
+                <h5 class="card-title mt-3">{{n.Service_title}}</h5>
+                <p>
+                    {{n.Service_des}}
+
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
 </body>
 </html>
