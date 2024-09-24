@@ -12,11 +12,14 @@
         <h1 class="text-center">Calculator</h1>
         
         <form method="POST">
+            {% if error %}
+            <div class="alert alert-danger " role="alert"> Enter the value </div>
+            {% endif %}
             {% csrf_token %}
             
             <div class="form-group">
                 <label for="num1">Value 1:</label>
-                <input type="text" class="form-control" id="num1" name="num1" required>
+                <input type="text" class="form-control" id="num1" name="num1" >
             </div>
             
             

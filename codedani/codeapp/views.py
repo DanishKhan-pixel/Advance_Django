@@ -2,10 +2,20 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .form import userForm
 from django.views.decorators.csrf import csrf_exempt
+from codeapp.models import*
 
 def homepage(request):
+    ServiceData=Service.objects.all()
+    # print(ServiceData)
+    # for a in ServiceData:
+        # print(a)
+
+    alpha={
+        "ServiceData": ServiceData
+
+    }
     data={
-        'title':'home',
+        'title':'home page ',
         'alpha':'software engineering', 
         'list':['ali','ahamad','khan'],
         'number':[1,2,3,4,5,6,7,8,9],
@@ -14,7 +24,7 @@ def homepage(request):
             {'name':'khan','phone':123456}
         ]
     } 
-    return render(request, "index.html", data)
+    return render(request, "index.html", data,alpha)
  
 def home(request):
     return render(request, 'home.html')
@@ -78,8 +88,12 @@ def calculator(request):
     return render(request, 'calculator.html',{'c':c})
 
 def envodd(request):
+
     c=''
     if request.method=="POST":
+        if request.POST.get('num1')=="":
+            return render(request,'checkevenodd.html',{'error':True})
+
         n=eval(request.POST.get('num1'))
         if n%2==0:
             c="Even number"
