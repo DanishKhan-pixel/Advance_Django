@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from codeapp.models import*
 
 def homepage(request):
-    ServiceData=Service.objects.all()
+    ServiceData=Service.objects.all().order_by("-Service_title")
     # print(ServiceData)
     # for a in ServiceData:
         # print(a)
