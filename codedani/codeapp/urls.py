@@ -12,7 +12,8 @@ urlpatterns = [
     path('userform/',views.userform,name='userform'),
     path('calculator/',views.calculator,name='calculator'),
     path('check/', views.envodd,name='checkevenodd'),
-    path('marksheet/',views.marksheet,name='marksheet')
+    path('marksheet/',views.marksheet,name='marksheet'),
+    path('news/<newsid>',views.news,name='news')
 
     
 ]

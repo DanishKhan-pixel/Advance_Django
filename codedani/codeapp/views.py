@@ -5,16 +5,23 @@ from django.views.decorators.csrf import csrf_exempt
 from codeapp.models import*
 
 def homepage(request):
+    NewData=New.objects.all()
     ServiceData=Service.objects.all().order_by("-Service_title")
     # print(ServiceData)
     # for a in ServiceData:
         # print(a)
+
+    if request.method=="GET":
+        st=request.GET.get('servicename')
+        if st!=None:
+           ServiceData=Service.objects.filter(Service_title__icontains=st)
     data={
         'title':'home page ',
         'alpha':'software engineering', 
-        'list':['ali','ahamad','khan'],
-        'number':[1,2,3,4,5,6,7,8,9],
+        
+      
         "ServiceData": ServiceData,
+        "NewData":NewData,
         'student_details':[
             {'name':'ali','phone':123456},
             {'name':'khan','phone':123456},
@@ -23,6 +30,14 @@ def homepage(request):
         ]
     } 
     return render(request, "index.html", data)
+
+def news(request,newsid):
+    
+    NewData=New.objects.get(id=newsid)
+    data={
+        "NewData":NewData,
+    }
+    return render(request, "news.html",data) 
  
 def home(request):
     return render(request, 'home.html')

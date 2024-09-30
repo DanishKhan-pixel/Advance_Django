@@ -9,8 +9,12 @@
 </head>
 <body>
 
-<marquee >
-  wellcom dani
+<marquee  onmouseover="stop()" onmouseout="start()">
+
+
+  {% for l in NewData %}
+   <a href="/news/{{l.id}}">{{l.new_title}} </a>
+  {% endfor %}
 </marquee>
 {% comment %} for loop in django  {% endcomment %}
     {% for n in list%}
@@ -54,6 +58,14 @@
 
       <div class="container mt-4">
         <div class="row">
+          <div class="row">
+            <div class ="col-13">
+            <form method="get">
+              <input type="text" name='servicename' value=''/>
+              <input type="submit" value="Search"/>
+            </form>
+          </div>
+          </div>
 
           {% for n in ServiceData %}
 
@@ -70,6 +82,8 @@
               </div>
             </div>
           </div>
+          {% empty %}
+          NO DATA FOUND
           {% endfor %}
         </div>
       </div>
